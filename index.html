@@ -1,12 +1,118 @@
 <!doctype html>
-<html lang="no">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Min side</title>
-  </head>
-  <body>
-    <h1>Hei!</h1>
-    <p>Dette er min GitHub Pages-side.</p>
-  </body>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Komplexity — Smart Product & Systems Engineering</title>
+	<link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header class="topbar">
+		<div class="container">
+			<h1 class="logo">Komplexity</h1>
+			<nav class="nav">
+				<!--<a href="#services">Services</a>
+				<a href="#work">Work</a> -->
+				<a href="#contact">Kontakt oss</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="container hero-inner">
+				<div class="hero-copy">
+					<h2>Skreddersøm av komplekse produkter</h2>
+					<p>Vi benytter automatisert digitale produksjonsmetoder for å lage komplekse og skreddersydde produkter innen;</p>
+					<ul>
+						<li>Bygg &amp; anlegg</li>
+						<li>Maritim</li>
+						<li>Forsvar</li>
+						<li>Arkitektur, kunst &amp; interiør</li>
+					</ul>
+				</div>
+				<div class="hero-visual">
+					<img src="schematic.png" alt="Schematic diagram of Komplexity system" class="hero-img">
+				</div>
+			</div>
+		</section>
+
+		<!-- Separate accordion / process section -->
+		<section id="process" class="section">
+			<div class="container">
+				<h3>Vår prosess</h3>
+				<div class="steps-accordion">
+					<div class="window" id="step-1">
+						<button class="window-header" aria-expanded="false" aria-controls="body-1">
+							<span class="window-number">1</span>
+							<strong class="window-title">Applikasjonsutvikling</strong>
+						</button>
+						<div class="window-body" id="body-1" aria-hidden="true">
+							<p>Sammen finner vi ut hvordan vår prosess kan gi deg bedre produkter.</p>
+						</div>
+					</div>
+					<div class="window" id="step-2">
+						<button class="window-header" aria-expanded="false" aria-controls="body-2">
+							<span class="window-number">2</span>
+							<strong class="window-title">Parametrisering & produksjonsutvikling</strong>
+						</button>
+						<div class="window-body" id="body-2" aria-hidden="true">
+							<p>Med vår interne prosess utvikler vi produktet ditt videre, og kobler det med vår produksjonsprosess. Resultatet er et justerbart produkt, som du kan skreddersy akkurat som du ønsker.</p>
+						</div>
+					</div>
+					<div class="window" id="step-3">
+						<button class="window-header" aria-expanded="false" aria-controls="body-3">
+							<span class="window-number">3</span>
+							<strong class="window-title">On-demand produksjon av skreddersydd produkt</strong>
+						</button>
+						<div class="window-body" id="body-3" aria-hidden="true">
+							<p>Når du har justert produktet akkurat slik du ønsker det, begynner produksjonen automatisk. Resultatet er et skreddersydd produkt, akkurat slik du ønsker det, levert akkurat når du trenger det.</p>
+						</div>
+					</div>
+					<!--<div class="window" id="step-4">
+						<button class="window-header" aria-expanded="false" aria-controls="body-4">
+							<span class="window-number">4</span>
+							<strong class="window-title">Support</strong>
+						</button>
+						<div class="window-body" id="body-4" aria-hidden="true">
+							<p>Ongoing support, updates and feature development to keep your product reliable and competitive.</p>
+						</div>-->
+					</div>
+				</div>
+			</div>
+		</section>
+		</section>
+
+		<section id="contact" class="section muted">
+			<div class="container">
+				<h3>Kontakt oss</h3>
+				<p>Vi elsker utfordringer!</p>
+				<p><a class="btn outline" href="mailto:hei@komplexity.no">hei@komplexity.no</a></p>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<small>© <span id="year"></span> Komplexity. All rights reserved.</small>
+		</div>
+	</footer>
+
+	<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+
+		// Accordion toggle for steps
+		document.querySelectorAll('.steps-accordion .window').forEach(function(win){
+			var header = win.querySelector('.window-header');
+			var body = win.querySelector('.window-body');
+			header.addEventListener('click', function(e){
+				var expanded = header.getAttribute('aria-expanded') === 'true';
+				header.setAttribute('aria-expanded', String(!expanded));
+				body.setAttribute('aria-hidden', String(expanded));
+				win.classList.toggle('expanded');
+			});
+		});
+	</script>
+</body>
 </html>
