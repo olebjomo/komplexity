@@ -109,7 +109,7 @@ body{
     transform:translateX(0);
   }
   100%{
-    transform:translateX(-220%);
+    transform:translateX(-420%);
   }
 }
 
@@ -123,3 +123,4 @@ body{
   }
   .nav{display:none}
 }
+
